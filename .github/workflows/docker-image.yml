@@ -26,5 +26,9 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
          echo fine login
 
- #   - name: Build the Docker image
-  #    run: docker build . --file Dockerfile --tag chico230/docker-graphql:$(date +%s)
+    - name: Build the Docker image
+      run: |
+       docker build . --file Dockerfile --tag chico230/docker-graphql:0.0.1 .
+    - name: Push the Docker image
+      run: |
+        docker push chico230/docker-graphql:0.0.1
