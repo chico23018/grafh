@@ -33,8 +33,6 @@ jobs:
         echo inizio login 
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
          echo fine login
-         echo "new version $NEW_VERSION !!!!!!!!!!"
-
     - name: Build the Docker image
       env:
         NEW_VERSION: ${{ steps.version.outputs.new_version }}
