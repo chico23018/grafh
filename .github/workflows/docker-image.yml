@@ -29,6 +29,8 @@ jobs:
     - name: Build the Docker image
       run: |
        docker build . --file Dockerfile --tag chico230/docker-graphql:0.0.1 
+       docker build . --file Dockerfile --tag chico230/docker-graphql:0.0.1 
     - name: Push the Docker image
       run: |
         docker push chico230/docker-graphql:0.0.1
+        docker push chico230/docker-graphql:lastest
