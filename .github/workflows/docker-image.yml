@@ -35,13 +35,13 @@ jobs:
          echo fine login
     - name: Build the Docker image
       env:
-        NEW_VERSION: ${{ steps.version.outputs.new_version }}
+        NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
        docker build . --file Dockerfile --tag chico230/docker-graphql:$NEW_VERSION
        docker build . --file Dockerfile --tag chico230/docker-graphql:lastest
     - name: Push the Docker image
       env:
-        NEW_VERSION: ${{ steps.version.outputs.new_version }}
+        NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
         docker push chico230/docker-graphql:$NEW_VERSION
         docker push chico230/docker-graphql:lastest
